@@ -11,11 +11,31 @@ package com.livehereandnow.ages.components;
  */
 public class ScoreBoard {
 
-    Points 文化;
-    Points 文化生產;
-    Points 科技;
-    Points 科技生產;
-    Points 軍力;
+    private Points 文化;
+    private Points 文化生產;
+    private Points 科技;
+    private Points 科技生產;
+    private Points 軍力;
+
+    public Points get文化() {
+        return 文化;
+    }
+
+    public Points get文化生產() {
+        return 文化生產;
+    }
+
+    public Points get科技() {
+        return 科技;
+    }
+
+    public Points get科技生產() {
+        return 科技生產;
+    }
+
+    public Points get軍力() {
+        return 軍力;
+    }
 
     public ScoreBoard() {
         文化 = new Points();
@@ -27,7 +47,7 @@ public class ScoreBoard {
 
     @Override
     public String toString() {
-        return "ScoreBoard{" + "\u6587\u5316=" + 文化 + ", \u6587\u5316\u751f\u7522=" + 文化生產 + ", \u79d1\u6280=" + 科技 + ", \u79d1\u6280\u751f\u7522=" + 科技生產 + ", \u8ecd\u529b=" + 軍力 + '}';
+        return "   文化:" + 文化 + "\n   文化生產(當回合):" + 文化生產 + "\n   科技:" + 科技 + "\n   科技生產(當回合):" + 科技生產 + "\n   軍力:" + 軍力  ;
     }
 
 }

@@ -14,7 +14,7 @@ public class BlueBank extends Points{
 
     @Override
     public String toString() {
-        return "BlueBank{" + this.points+'}';
+        return "藍點:" + this.points;
     }
     
     

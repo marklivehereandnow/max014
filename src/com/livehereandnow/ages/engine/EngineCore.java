@@ -82,19 +82,7 @@ public class EngineCore {
         return roundNum;
     }
 
-//    public void do拿牌扣點(int 點數) {
-//        玩家[當前玩家ID - 1].set內政點數(玩家[當前玩家ID - 1].get內政點數() - 點數);
-//    }
-//    public int get當前玩家拿過的時代A領袖牌數() {
-//
-//        return 玩家[當前玩家ID - 1].get拿過的時代A領袖牌數();
-//    }
-//    public int get當前玩家ID() {
-//        return 當前玩家ID;
-//    }
-//    public List<Card> getAgeA內政牌() {
-//        return ageA內政牌;
-//    }
+
     public boolean doStatus() throws AgesException {
 
         cardRow.show(1);
@@ -106,7 +94,7 @@ public class EngineCore {
         System.out.println("   === 事件" + " === ");
         System.out.println("未來事件:0 ----");
         System.out.println("當前事件:4 AAAA");
-        System.out.println("過去事件:0可以不需要有");//
+//        System.out.println("過去事件:0可以不需要有");//
         System.out.println();
         System.out.println("   === Round #" + roundNum + ", " + this.當前玩家.getName() + " === ");
         this.當前玩家.showStatus();
@@ -189,8 +177,8 @@ public class EngineCore {
 
         roundNum = 1;
 
-        玩家[0].getMilitaryCounter().setPoint(33);//DEBUG 方便測試
-        玩家[0].getCivilCounter().setPoint(99);//DEBUG 方便測試
+        玩家[0].getMilitaryCounter().setPoint(0);//DEBUG 方便測試
+        玩家[0].getCivilCounter().setPoint(1);//DEBUG 方便測試
 
         cardRow = new CardRow(玩家人數);
 
@@ -329,14 +317,17 @@ public class EngineCore {
     }
 
     public boolean doHelp() {
-        System.out.println("debug  列出正在開發中的信息  ");
-        System.out.println("\n=== basic commands === (start)");
-        System.out.println("population  ");
         System.out.println("   help         this command");
+        System.out.println("\n=== basic commands === (start)");
+        
+        System.out.println("debug  列出正在開發中的信息  ");
+        System.out.println("population  ");
+        
         System.out.println(" revolution 革命!");
         System.out.println(" change-government 和平轉移政權");
         System.out.println("   take-card X  take number X card, X is 0 base");
-        System.out.println("   change-turn  change player's turn");
+        System.out.println("   upgrade | u | 參數x,y,z x=項目代號1~5 y=從哪個時代 z=到哪個時代   ");
+                System.out.println("   change-turn | c | ..    change player's turn");
         System.out.println("   status       to show current game status");
         System.out.println("   version      顯示版本變更歷史");
         System.out.println("  TODO         代辦事項");

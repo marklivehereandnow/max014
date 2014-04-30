@@ -84,9 +84,19 @@ public class Main {
             return engine.doCmd(keyword, p1);
         }
         
+          if (tokenCnt == 3) {//如果輸入的是2個字的話
+            try {
+                p1 = Integer.parseInt(tokens.get(1));
+                p2 = Integer.parseInt(tokens.get(2));
+            } catch (Exception ex) {
+                System.out.println("Parameter must be integer!");
+                return false;
+            }
+            return engine.doCmd(keyword, p1,p2);
+        }
         
         // ver 0.62 for upgrad 3 0 1, Upgrad Farm from Age A to Age I
-        if (tokenCnt == 4) {//如果輸入的是2個字的話
+        if (tokenCnt == 4) {//如果輸入的是3個字的話
             try {
                 p1 = Integer.parseInt(tokens.get(1));
                 p2 = Integer.parseInt(tokens.get(2));

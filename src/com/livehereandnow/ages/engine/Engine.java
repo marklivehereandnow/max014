@@ -94,11 +94,13 @@ public class Engine {
     public boolean doCmd(String keyword, int p1, int p2) throws IOException, AgesException {
         switch (keyword) {
             case "build":
+                case "b":
                 return core.doBuild(p1, p2);
 
             
             case "打":
             case "out":
+                case "o":
             case "play":
             case "play-card":
             case "out-card":
@@ -113,6 +115,7 @@ public class Engine {
       public boolean doCmd(String keyword, int p1, int p2, int p3) throws IOException, AgesException {
         switch (keyword) {
             case "upgrade":
+                case "u":
                 return core.doUpgrade(p1, p2, p3);
 
             default:
@@ -126,6 +129,15 @@ public class Engine {
     public boolean doVersion() {
         System.out.println(" TODO   [A內政-亞歷山大圖書館 科技生產+1，文化生產+1，內政手牌上限+1，軍事手牌上限+1]  ");
       
+        System.out.println();
+        System.out.println("  === ver 0.66 ===  2014-4-30, 12:50, by Max　");
+        System.out.println("    1. fixed ###BUG### 我打了b 3 0但是系統顯示看不懂指令...Cureently command must be one or two words only! ");
+        System.out.println("    2. 新增take-card  簡易指令t");
+        System.out.println("    3. 新增play-card 簡易指令o");
+        System.out.println("    4. 新增build 簡易指令b");
+        System.out.println("    5. 驗證build 指令可以達到增加目標黃點的功能，workpool-1");
+        System.out.println("    6. 整體展示優化並中文化");
+//        System.out.println("    6. ");
         System.out.println();
         System.out.println("  === ver 0.65 ===  2014-4-30, 11:00, by Max　");
         System.out.println("    1. fixed ###BUG### 我拿了一張農場牌，但是不能當回合打出，[時代I內政-灌溉-農場]...you cannot play this card this round ");
